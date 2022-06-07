@@ -16,6 +16,7 @@ namespace VehicleAPI.Models
         public string? RegistrationNo { get; set; }
         public Maker? Maker { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM dd yyyy}")]
         [Column("DOR")]
         public DateTime DOR { get; set; }
         [Column("Chassis_No")]

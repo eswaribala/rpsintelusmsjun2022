@@ -6,7 +6,7 @@ namespace VehicleAPI.Repositories
     public interface IVehicleRepo
     {
        Task<Vehicle> AddVehicle(Vehicle Vehicle);
-       Task<bool> DeleteVehicle(Vehicle Vehicle);
+       Task<bool> DeleteVehicle(long EngineNo);
 
         Task<Vehicle> GetVehicleById(long EngineNo);
         Task<IEnumerable<Vehicle>> GetVehicles();

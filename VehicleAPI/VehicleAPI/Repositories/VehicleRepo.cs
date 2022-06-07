@@ -8,6 +8,7 @@ namespace VehicleAPI.Repositories
     {
         private readonly InsuranceContext _db;
 
+        //DI
         public VehicleRepo(InsuranceContext db)
         {
             this._db = db;
@@ -22,14 +23,31 @@ namespace VehicleAPI.Repositories
 
         }
 
-        public Task<bool> DeleteVehicle(Vehicle Vehicle)
+        public async Task<bool> DeleteVehicle(long EngineNo)
         {
-            throw new NotImplementedException();
+            var result = await this._db.Vehicles.FirstOrDefaultAsync(v => v.EngineNo
+            == EngineNo);
+            if (result != null)
+            {
+                this._db.Vehicles.Remove(result);
+                await this._db.SaveChangesAsync();
+            }
+          result= await this._db.Vehicles.FirstOrDefaultAsync(v => v.EngineNo
+           == EngineNo);
+            if (result == null)
+                return true;
+            else
+                return false;
+
         }
 
-        public Task<Vehicle> GetVehicleById(long EngineNo)
+        public async Task<Vehicle> GetVehicleById(long EngineNo)
         {
-            throw new NotImplementedException();
+           var result= await this._db.Vehicles.FirstOrDefaultAsync(v => v.EngineNo == EngineNo);
+            if (result == null)
+                return null;
+            else
+                return result;
         }
 
         public async Task<IEnumerable<Vehicle>> GetVehicles()
@@ -37,9 +55,19 @@ namespace VehicleAPI.Repositories
             return await this._db.Vehicles.ToListAsync();
         }
 
-        public Task<Vehicle> UpdateVehicle(Vehicle Vehicle)
+        public async Task<Vehicle> UpdateVehicle(Vehicle Vehicle)
         {
-            throw new NotImplementedException();
+            var result = await this._db.Vehicles.FirstOrDefaultAsync(v => v.EngineNo 
+            == Vehicle.EngineNo);
+
+            if (result != null)
+            {
+                result.ChassisNo = Vehicle.ChassisNo;
+                await this._db.SaveChangesAsync();
+                return result;
+            }
+            else
+                return null;
         }
     }
 }

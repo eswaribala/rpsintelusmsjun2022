@@ -9,7 +9,7 @@ namespace VehicleAPI.Repositories
        Task<bool> DeleteVehicle(Vehicle Vehicle);
 
         Task<Vehicle> GetVehicleById(long EngineNo);
-        IEnumerable<Task<Vehicle>> GetVehicles();
+        Task<IEnumerable<Vehicle>> GetVehicles();
 
         Task<Vehicle> UpdateVehicle(Vehicle Vehicle);
             

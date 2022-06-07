@@ -8,7 +8,7 @@ namespace VehicleAPI.Controllers
     [ApiVersion("1.0")]
     [ApiVersion("1.1")]
     [ApiVersion("2.0")]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class VehicleController : ControllerBase
     {
@@ -29,7 +29,6 @@ namespace VehicleAPI.Controllers
         {
             return await this._vehicleRepo.GetVehicles();
         }
-
 
 
 

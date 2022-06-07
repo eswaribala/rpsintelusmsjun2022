@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VehicleAPI.Models;
 using VehicleAPI.Repositories;
 
 namespace VehicleAPI.Controllers
@@ -21,49 +22,49 @@ namespace VehicleAPI.Controllers
         }
 
 
-        // GET: api/<CatalogController>
+        // GET: api/<VehicleController>
         [HttpGet]
         [MapToApiVersion("2.0")]
-        public async Task<IEnumerable<Catalog>> Get()
+        public async Task<IEnumerable<Vehicle>> Get()
         {
-            return await this._CatalogRepository.GetAllCatalog();
+            return await this._vehicleRepo.GetVehicles();
         }
 
 
 
 
-        // GET api/<CatalogController>/5
-        [HttpGet("{CatalogId}")]
-        public async Task<Catalog> Get(long CatalogId)
+        // GET api/<VehicleController>/5
+        [HttpGet("{EngineNo}")]
+        public async Task<Vehicle> Get(long EngineNo)
         {
-            return await this._CatalogRepository.GetCatalogById(CatalogId);
+            return await this._vehicleRepo.GetVehicleById(EngineNo);
         }
 
-        // POST api/<CatalogController>
+        // POST api/<VehicleController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Catalog Catalog)
+        public async Task<IActionResult> Post([FromBody] Vehicle Vehicle)
         {
-            await this._CatalogRepository.AddCatalog(Catalog);
+            await this._vehicleRepo.AddVehicle(Vehicle);
             return CreatedAtAction(nameof(Get),
-                            new { id = Catalog.CatalogId }, Catalog);
+                            new { id = Vehicle.EngineNo }, Vehicle);
 
         }
 
-        // PUT api/<CatalogController>/5
+        // PUT api/<VehicleController>/5
         [HttpPut()]
-        public async Task<IActionResult> Put([FromBody] Catalog Catalog)
+        public async Task<IActionResult> Put([FromBody] Vehicle Vehicle)
         {
-            await this._CatalogRepository.UpdateCatalog(Catalog);
+            await this._vehicleRepo.UpdateVehicle(Vehicle);
             return CreatedAtAction(nameof(Get),
-                            new { id = Catalog.CatalogId }, Catalog);
+                            new { id = Vehicle.EngineNo}, Vehicle);
         }
 
-        // DELETE api/<CatalogController>/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        // DELETE api/<VehicleController>/5
+        [HttpDelete("{EngineNo}")]
+        public async Task<IActionResult> Delete(long EngineNo)
         {
 
-            if (await this._CatalogRepository.DeleteCatalog(id))
+            if (await this._vehicleRepo.DeleteVehicle(EngineNo))
                 return new OkResult();
             else
                 return new BadRequestResult();

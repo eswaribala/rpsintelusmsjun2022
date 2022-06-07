@@ -6,7 +6,8 @@ ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
 
 builder.Services.AddDbContext<InsuranceContext>(options => 
-options.UseSqlServer(configuration.GetConnectionString("Insurance_Conn_String")));
+options.UseSqlServer(configuration.
+GetConnectionString("Insurance_Conn_String")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -11,7 +11,7 @@ namespace VehicleAPI.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Engine_No" )]
         public long EngineNo { get; set; }
-        [Column("Rgistration_No")]
+        [Column("Registration_No")]
         [Required]
         public string? RegistrationNo { get; set; }
         public Maker? Maker { get; set; }

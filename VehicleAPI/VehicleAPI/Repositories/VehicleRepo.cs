@@ -1,4 +1,5 @@
-﻿using VehicleAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using VehicleAPI.Contexts;
 using VehicleAPI.Models;
 
 namespace VehicleAPI.Repositories
@@ -31,9 +32,9 @@ namespace VehicleAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Vehicle>> GetVehicles()
+        public async Task<IEnumerable<Vehicle>> GetVehicles()
         {
-            throw new NotImplementedException();
+            return await this._db.Vehicles.ToListAsync();
         }
 
         public Task<Vehicle> UpdateVehicle(Vehicle Vehicle)

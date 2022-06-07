@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using VehicleAPI.Contexts;
+using VehicleAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -8,6 +9,8 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<InsuranceContext>(options => 
 options.UseSqlServer(configuration.
 GetConnectionString("Insurance_Conn_String")));
+//DI--Singleton,Scoped,Transient
+builder.Services.AddScoped<IVehicleRepo, VehicleRepo>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

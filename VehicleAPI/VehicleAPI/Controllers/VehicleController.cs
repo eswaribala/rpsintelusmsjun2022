@@ -4,6 +4,9 @@ using VehicleAPI.Repositories;
 
 namespace VehicleAPI.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("1.1")]
+    [ApiVersion("2.0")]
     [Route("api/[controller]")]
     [ApiController]
     public class VehicleController : ControllerBase

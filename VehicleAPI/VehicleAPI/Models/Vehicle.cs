@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehicleAPI.Models
 {
-    public enum FuelType { PETROL, DIESEL,GAS}
+    public enum FuelType {PETROL, DIESEL,GAS}
     [Table("Vehicle")]
     public class Vehicle
     {
@@ -22,7 +22,7 @@ namespace VehicleAPI.Models
         [Column("Chassis_No")]
         public string? ChassisNo { get; set; }
         
-        [Column("Fuel_Type")]
+        [Column("Fuel_Type",TypeName = "nvarchar(24)")]
         public FuelType FuelType { get; set; }
         [Column("Color")]
         public string? Color { get; set; }

@@ -1,16 +1,38 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using VehicleAPI.Contexts;
+using VehicleAPI.Models;
 using VehicleAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
 
-builder.Services.AddDbContext<InsuranceContext>(options => 
-options.UseSqlServer(configuration.
-GetConnectionString("Insurance_Conn_String")));
+Dictionary<String, Object> data = new VaultConfiguration(configuration)
+    .GetDBCredentials().Result;
+Console.WriteLine(data);
+SqlConnectionStringBuilder providerCs = new SqlConnectionStringBuilder();
+providerCs.InitialCatalog = data["dbname1"].ToString();
+providerCs.UserID = data["username"].ToString();
+providerCs.Password = data["password"].ToString();
+providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2021";
+
+//providerCs.UserID = CryptoService2.Decrypt(ConfigurationManager.AppSettings["UserId"]);
+providerCs.MultipleActiveResultSets = true;
+providerCs.TrustServerCertificate = false;
+
+builder.Services.AddDbContext<InsuranceContext>(o => 
+o.UseSqlServer(providerCs.ToString()));
+
+
+
+
+
+//builder.Services.AddDbContext<InsuranceContext>(options => 
+//options.UseSqlServer(configuration.
+//GetConnectionString("Insurance_Conn_String")));
 //DI--Singleton,Scoped,Transient
 builder.Services.AddScoped<IVehicleRepo, VehicleRepo>();
 

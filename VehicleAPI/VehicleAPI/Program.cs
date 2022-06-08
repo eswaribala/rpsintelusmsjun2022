@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Steeltoe.Extensions.Configuration.ConfigServer;
 using VehicleAPI.Contexts;
 using VehicleAPI.Models;
 using VehicleAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddConfigServer();
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
 
@@ -17,7 +19,8 @@ SqlConnectionStringBuilder providerCs = new SqlConnectionStringBuilder();
 providerCs.InitialCatalog = data["dbname1"].ToString();
 providerCs.UserID = data["username"].ToString();
 providerCs.Password = data["password"].ToString();
-providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2021";
+//providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2021";
+providerCs.DataSource = configuration["servername"];
 
 //providerCs.UserID = CryptoService2.Decrypt(ConfigurationManager.
 //AppSettings["UserId"]);

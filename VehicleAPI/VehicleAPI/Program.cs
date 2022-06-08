@@ -19,7 +19,8 @@ providerCs.UserID = data["username"].ToString();
 providerCs.Password = data["password"].ToString();
 providerCs.DataSource = "DESKTOP-55AGI0I\\MSSQLEXPRESS2021";
 
-//providerCs.UserID = CryptoService2.Decrypt(ConfigurationManager.AppSettings["UserId"]);
+//providerCs.UserID = CryptoService2.Decrypt(ConfigurationManager.
+//AppSettings["UserId"]);
 providerCs.MultipleActiveResultSets = true;
 providerCs.TrustServerCertificate = false;
 

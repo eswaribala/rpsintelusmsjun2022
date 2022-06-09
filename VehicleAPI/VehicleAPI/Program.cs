@@ -40,8 +40,9 @@ o.UseSqlServer(providerCs.ToString()));
 //GetConnectionString("Insurance_Conn_String")));
 //DI--Singleton,Scoped,Transient
 builder.Services.AddScoped<IVehicleRepo, VehicleRepo>();
-builder.Services.AddDiscoveryClient(configuration);
+
 builder.Services.AddControllers();
+builder.Services.AddDiscoveryClient(configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddApiVersioning();

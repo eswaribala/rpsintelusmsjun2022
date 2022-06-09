@@ -1,0 +1,14 @@
+Vehicle API
+
+4 Instances
+http://localhost:7070/api/v1/Vehicle --> register---> Eureka server (health check) --> once in 2/sec
+http://localhost:6060/api/v1/Vehicle --->register---> Eureka server
+http://localhost:6062/api/v1/Vehicle --->register---> Eureka server
+http://localhost:6064/api/v1/Vehicle --->register---> Eureka server
+
+
+Load Balancer find out (low load)
+
+API Gateway 
+
+http://localhost:7072/vehicles logical url

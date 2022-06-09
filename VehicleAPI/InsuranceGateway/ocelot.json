@@ -1,48 +1,48 @@
 ﻿{
-    "Routes": [
+    "ReRoutes": [
         {
             "DownstreamPathTemplate": "/api/v2/Vehicle/",
             "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-               {
-                    "Host": "localhost",
-                    "Port": 7072
-                }
-            ],
-            //"UseServiceDiscovery": true,
-            //"ServiceName": "INTEL-COMMON",
+            //"DownstreamHostAndPorts": [
+            //   {
+            //        "Host": "localhost",
+            //        "Port": 7072
+            //    }
+            //],
+            "UseServiceDiscovery": true,
+            "ServiceName": "INTEL-COMMON",
             "UpstreamHttpMethod": [ "GET" ],
-            //"QoSOptions": {
-            //    "ExceptionsAllowedBeforeBreaking": 3,
-            //    "DurationOfBreak": 1000,
-            //    "TimeoutValue": 5000
-            //},
-            //"LoadBalancerOptions": {
-            //    "Type": "RoundRobin"
-            //},
+            "QoSOptions": {
+                "ExceptionsAllowedBeforeBreaking": 3,
+                "DurationOfBreak": 1000,
+                "TimeoutValue": 5000
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            },
 
             "UpstreamPathTemplate": "/vehicles"
         },
         {
             "DownstreamPathTemplate": "/WeatherForecast",
             "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-               {
-                    "Host": "localhost",
-                    "Port": 6060
-                }
-            ],
+            //"DownstreamHostAndPorts": [
+            //   {
+            //        "Host": "localhost",
+            //        "Port": 6060
+            //    }
+            //],
             "UseServiceDiscovery": true,
-            //"ServiceName": "CLAIMAPI",
-            //"UpstreamHttpMethod": [ "GET" ],
-            //"QoSOptions": {
-            //    "ExceptionsAllowedBeforeBreaking": 3,
-            //    "DurationOfBreak": 1000,
-            //    "TimeoutValue": 5000
-            //},
-            //"LoadBalancerOptions": {
-            //    "Type": "RoundRobin"
-            //},
+            "ServiceName": "CLAIMAPI",
+            "UpstreamHttpMethod": [ "GET" ],
+            "QoSOptions": {
+                "ExceptionsAllowedBeforeBreaking": 3,
+                "DurationOfBreak": 1000,
+                "TimeoutValue": 5000
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            },
             "UpstreamPathTemplate": "/weather",
             "RateLimitOptions": {
                 "ClientWhitelist": [],
@@ -56,6 +56,11 @@
     ],
     "GlobalConfiguration": {
         "BaseUrl": "http://localhost:9000",
-       // "ServiceDiscoveryProvider": {"Type": "Eureka"}
+        "UseServiceDiscovery": true,
+        "ServiceDiscoveryProvider": {
+            "Type": "Eureka",
+            "Host": "localhost",
+            "Port":  "8765"
+        }
     }
 }

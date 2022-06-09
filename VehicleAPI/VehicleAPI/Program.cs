@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 using VehicleAPI.Contexts;
 using VehicleAPI.Models;
@@ -39,7 +40,7 @@ o.UseSqlServer(providerCs.ToString()));
 //GetConnectionString("Insurance_Conn_String")));
 //DI--Singleton,Scoped,Transient
 builder.Services.AddScoped<IVehicleRepo, VehicleRepo>();
-
+builder.Services.AddDiscoveryClient(configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

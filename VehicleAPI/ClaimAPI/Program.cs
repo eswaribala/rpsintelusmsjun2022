@@ -6,7 +6,7 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddScoped<IInvokeService, InvokeService>();
 builder.Services.AddHttpClient<IInvokeService, InvokeService>(options =>
 {
-    options.BaseAddress = new Uri("https://stackoverflow.com");
+    options.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/users");
 }).AddPolicyHandler(InvokeService.GetCircuitBreakerPolicy())
 .AddPolicyHandler(InvokeService.GetRetryPolicy());
 builder.Services.AddControllers();

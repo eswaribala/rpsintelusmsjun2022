@@ -35,10 +35,6 @@ providerCs.TrustServerCertificate = false;
 builder.Services.AddDbContext<InsuranceContext>(o => 
 o.UseSqlServer(providerCs.ToString()));
 
-
-
-
-
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
 options.UseSqlServer(configuration.
 GetConnectionString("Identity_Conn_String")));

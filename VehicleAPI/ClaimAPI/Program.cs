@@ -6,7 +6,7 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddScoped<IInvokeService, InvokeService>();
 builder.Services.AddHttpClient<IInvokeService, InvokeService>(options =>
 {
-    options.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/users");
+    options.BaseAddress = new Uri("https://data.nasdaq.com/api/v3/datasets/OPEC/ORB.json");
 }).AddPolicyHandler(InvokeService.GetCircuitBreakerPolicy())
 .AddPolicyHandler(InvokeService.GetRetryPolicy());
 builder.Services.AddControllers();

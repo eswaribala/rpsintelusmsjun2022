@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fSDUKAUmmsL3nYl0U0iwlCrPPbL/wzPkdEYVPaxXo7VYKXz9fwAyTO7l6DdofcRja5m+/bDu8VJlbkjuIL+QPQ==",
+  "dgSpecHash": "Jsvy5hKzJlav2F5uUvncnxom2iyRfgioRntTlJHAta+u3vm3k+JPH0qlKPCOxN33iXDOWN3XIgouk/kwbrcJxw==",
   "success": true,
   "projectFilePath": "G:\\Local disk\\intelmsjun2022\\VehicleAPI\\ClaimAPI\\ClaimAPI.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,8 @@
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.hosting\\6.0.0\\microsoft.extensions.hosting.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\6.0.0\\microsoft.extensions.hosting.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.http\\3.1.0\\microsoft.extensions.http.3.1.0.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.http.polly\\6.0.5\\microsoft.extensions.http.polly.6.0.5.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.logging.configuration\\6.0.0\\microsoft.extensions.logging.configuration.6.0.0.nupkg.sha512",
@@ -33,6 +34,9 @@
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\6.0.0\\microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\polly.contrib.waitandretry\\1.1.1\\polly.contrib.waitandretry.1.1.1.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\polly.extensions.http\\3.0.0\\polly.extensions.http.3.0.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\steeltoe.common\\3.2.0\\steeltoe.common.3.2.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\steeltoe.common.abstractions\\3.2.0\\steeltoe.common.abstractions.3.2.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\steeltoe.common.http\\3.2.0\\steeltoe.common.http.3.2.0.nupkg.sha512",

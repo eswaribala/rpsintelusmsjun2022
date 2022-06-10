@@ -35,3 +35,7 @@ G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\obj\Debug\net6.0\refint\ClaimAP
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\obj\Debug\net6.0\ClaimAPI.pdb
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\obj\Debug\net6.0\ClaimAPI.genruntimeconfig.cache
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\obj\Debug\net6.0\ref\ClaimAPI.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Polly.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Polly.Contrib.WaitAndRetry.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Polly.Extensions.Http.dll

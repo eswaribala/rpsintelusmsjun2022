@@ -1,3 +1,4 @@
+using ClaimAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClaimAPI.Controllers
@@ -6,6 +7,8 @@ namespace ClaimAPI.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        //private readonly IInvokeService _invokeService;
+
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -16,6 +19,7 @@ namespace ClaimAPI.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -29,5 +33,6 @@ namespace ClaimAPI.Controllers
             })
             .ToArray();
         }
+        
     }
 }

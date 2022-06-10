@@ -1,61 +1,39 @@
 ﻿{
     "Routes": [
         {
-            "DownstreamPathTemplate": "/api/v2/Vehicle/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-               {
-                    "Host": "localhost",
-                    "Port": 7072
-                }
-            ],
-            //"UseServiceDiscovery": true,
-            //"ServiceName": "INTEL-COMMON",
+            "ServiceName": "CLAIMAPI",
+            "DownstreamPathTemplate": "/WeatherForecast",
+            "UpstreamPathTemplate": "/weather",
             "UpstreamHttpMethod": [ "GET" ],
-            //"QoSOptions": {
-            //    "ExceptionsAllowedBeforeBreaking": 3,
-            //    "DurationOfBreak": 1000,
-            //    "TimeoutValue": 5000
-            //},
-            //"LoadBalancerOptions": {
-            //    "Type": "RoundRobin"
-            //},
-
-            "UpstreamPathTemplate": "/vehicles"
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
         },
         {
-            "DownstreamPathTemplate": "/WeatherForecast",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-               {
-                    "Host": "localhost",
-                    "Port": 6060
-                }
-            ],
-            "UseServiceDiscovery": true,
-            //"ServiceName": "CLAIMAPI",
-            //"UpstreamHttpMethod": [ "GET" ],
-            //"QoSOptions": {
-            //    "ExceptionsAllowedBeforeBreaking": 3,
-            //    "DurationOfBreak": 1000,
-            //    "TimeoutValue": 5000
-            //},
-            //"LoadBalancerOptions": {
-            //    "Type": "RoundRobin"
-            //},
-            "UpstreamPathTemplate": "/weather",
-            "RateLimitOptions": {
-                "ClientWhitelist": [],
-                "EnableRateLimiting": true,
-                "Period": "1s",
-                "PeriodTimespan": 1,
-                "Limit": 1
+            "ServiceName": "INTEL-COMMON",
+            "DownstreamPathTemplate": "/api/v2/Vehicle",
+            "UpstreamPathTemplate": "/vehicles",
+            "UpstreamHttpMethod": [ "GET" ],
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
             }
         }
-        
     ],
     "GlobalConfiguration": {
-        "BaseUrl": "http://localhost:9000"
-       // "ServiceDiscoveryProvider": {"Type": "Eureka"}
+        "RequestIdKey": "OcRequestId",
+        "DownstreamScheme": "http",
+        "ReRoutesCaseSensitive": false,
+        "UseServiceDiscovery": true,
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 8761,
+            "Type": "Eureka"
+        }
     }
 }

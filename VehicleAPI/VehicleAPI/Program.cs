@@ -35,9 +35,9 @@ o.UseSqlServer(providerCs.ToString()));
 
 
 
-//builder.Services.AddDbContext<InsuranceContext>(options => 
-//options.UseSqlServer(configuration.
-//GetConnectionString("Insurance_Conn_String")));
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+options.UseSqlServer(configuration.
+GetConnectionString("Identity_Conn_String")));
 //DI--Singleton,Scoped,Transient
 builder.Services.AddScoped<IVehicleRepo, VehicleRepo>();
 

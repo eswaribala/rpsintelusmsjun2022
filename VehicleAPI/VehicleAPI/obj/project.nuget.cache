@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Tk0w2cS0vdOacKsa3POq/tIdMt6rL30MqVptTvJxrknk0FS0W4SAnj4dRQYeWuE/uM7N/jfWQTS1a0UJM8ADXg==",
+  "dgSpecHash": "oY9B/GHTVeD+eOBNH9zk9C58Md7nY4dQ/q6tKopZsLVJixTPiCkFgZWalrmqvFi4hUUlIGmcdpMB1gNz1+Nlsw==",
   "success": true,
   "projectFilePath": "G:\\Local disk\\intelmsjun2022\\VehicleAPI\\VehicleAPI\\VehicleAPI.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,7 @@
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\graphql.systemreactive\\4.1.0\\graphql.systemreactive.4.1.0.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\graphql.systemtextjson\\4.6.1\\graphql.systemtextjson.4.6.1.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.4\\microsoft.aspnetcore.authentication.jwtbearer.6.0.4.nupkg.sha512",
+    "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.4\\microsoft.aspnetcore.cryptography.internal.6.0.4.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.4\\microsoft.aspnetcore.cryptography.keyderivation.6.0.4.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.4\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.4.nupkg.sha512",

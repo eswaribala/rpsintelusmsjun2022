@@ -1,1 +1,4 @@
+#server process
 docker run --name intel-mongo -p 27017:27017 -d mongo
+#client process
+docker exec -it intel-mongo mongo

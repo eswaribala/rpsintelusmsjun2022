@@ -1,3 +1,5 @@
+using CQRSNET6Demo.Commands;
+using CQRSNET6Demo.Events;
 using CQRSNET6Demo.Models.Mongo;
 using CQRSNET6Demo.Models.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +17,10 @@ builder.Services.AddDbContext<CustomerSQLiteDatabaseContext>
 
 builder.Services.AddTransient<CustomerSQLiteRepository>();
 builder.Services.AddTransient<CustomerMongoRepository>();
+builder.Services.AddTransient<AMQPEventPublisher>();
+builder.Services.AddSingleton<CustomerMessageListener>();
+builder.Services.AddScoped<ICommandHandler<Command>, CustomerCommandHandler>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

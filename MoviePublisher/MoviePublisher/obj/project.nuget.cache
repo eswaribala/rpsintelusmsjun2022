@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xnenT0Sjk3lhDEyC+1vx6794utEsKmpvYEUzhp4zWzT1+qEcG47YP7jaJkAnFCsZm0OnakmTsrOCiRt6GHquVQ==",
+  "dgSpecHash": "UM2DZewdJGuQoDMlkY2Dl9HQ20NpwHUSO+ZIHV+WOWEq+DAhwiRb0As9TMsk8VLcNbD4Eux/TX1qtdO6h2Fjyg==",
   "success": true,
-  "projectFilePath": "G:\\Local disk\\inteldotnetmay2022\\MoviePublisher\\MoviePublisher\\MoviePublisher.csproj",
+  "projectFilePath": "G:\\Local disk\\intelmsjun2022\\MoviePublisher\\MoviePublisher\\MoviePublisher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\confluent.kafka\\1.8.2\\confluent.kafka.1.8.2.nupkg.sha512",
     "C:\\Users\\Balasubramaniam\\.nuget\\packages\\librdkafka.redist\\1.8.2\\librdkafka.redist.1.8.2.nupkg.sha512",

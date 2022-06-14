@@ -13,15 +13,24 @@ namespace CQRSNET6Demo.Events
     public class AMQPEventPublisher
     {
         private readonly ConnectionFactory connectionFactory;
-    
-        public AMQPEventPublisher()
+        private readonly IConfiguration _configuration;
+
+        public AMQPEventPublisher(IConfiguration configuration)
         {
+            _configuration = configuration;
+            _configuration = new ConfigurationBuilder()
+                            .AddJsonFile("appsettings.json")
+                            .Build();
+
+
             connectionFactory = new ConnectionFactory();
-            connectionFactory.UserName = "guest";
-            connectionFactory.Password = "guest";
-            connectionFactory.VirtualHost = "/";
-            connectionFactory.HostName = "localhost";
+            connectionFactory.UserName = configuration["amqp:username"];
+            connectionFactory.Password = configuration["amqp:password"];
+            connectionFactory.VirtualHost = configuration["amqp:virtualhost"];
+            connectionFactory.HostName = configuration["amqp:hostname"];
             connectionFactory.Port = AmqpTcpEndpoint.UseDefaultPort;
+           
+
             //connectionFactory.CreateConnection();
         }
         public void PublishEvent<T>(T @event) where T : IEvent

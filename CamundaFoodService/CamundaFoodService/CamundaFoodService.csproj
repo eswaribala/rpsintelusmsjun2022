@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>e368be02-bfa9-4a92-8eec-3b7cfd6883c2</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Processes\foodorderprocess.bpmn" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Processes\foodorderprocess.bpmn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Camunda.Api.Client" Version="2.6.0" />
+    <PackageReference Include="Camunda.Worker" Version="0.13.4" />
+    <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+</Project>

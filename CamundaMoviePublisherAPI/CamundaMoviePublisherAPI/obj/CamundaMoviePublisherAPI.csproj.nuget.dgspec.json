@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Local disk\\inteldotnetmay2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj": {}
+    "G:\\Local disk\\intelmsjun2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj": {}
   },
   "projects": {
-    "G:\\Local disk\\inteldotnetmay2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj": {
+    "G:\\Local disk\\intelmsjun2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Local disk\\inteldotnetmay2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj",
+        "projectUniqueName": "G:\\Local disk\\intelmsjun2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj",
         "projectName": "CamundaMoviePublisherAPI",
-        "projectPath": "G:\\Local disk\\inteldotnetmay2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj",
+        "projectPath": "G:\\Local disk\\intelmsjun2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI.csproj",
         "packagesPath": "C:\\Users\\Balasubramaniam\\.nuget\\packages\\",
-        "outputPath": "G:\\Local disk\\inteldotnetmay2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\obj\\",
+        "outputPath": "G:\\Local disk\\intelmsjun2022\\CamundaMoviePublisherAPI\\CamundaMoviePublisherAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

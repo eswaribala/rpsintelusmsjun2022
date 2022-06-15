@@ -1,0 +1,45 @@
+﻿<p>
+    Bitte gib alle notwendigen Daten ein, damit dein Chef fundiert aber willk&uuml;rlich entscheiden kann.
+</p>
+
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label">Code</label>
+        <div class="controls">
+            <input type="text"
+                   cam-variable-name="Code"
+                   cam-variable-type="String"
+                   readonly
+                   class="form-control" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Name</label>
+        <div class="controls">
+            <input type="text"
+                   cam-variable-name="Name"
+                   cam-variable-type="String"
+                   readonly
+                   class="form-control" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Qty</label>
+        <div class="controls">
+            <input type="text"
+                   cam-variable-name="Qty"
+                   cam-variable-type="Integer"
+                   readonly
+                   class="form-control" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Confirm the order?</label>
+        <div class="controls">
+            <input type="checkbox"
+                   cam-variable-name="approved"
+                   cam-variable-type="Boolean"
+                   class="form-control" />
+        </div>
+    </div>
+</form>

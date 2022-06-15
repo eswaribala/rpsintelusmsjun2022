@@ -9,10 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Forms\ViewOrder.html" />
     <None Remove="Processes\foodorderprocess.bpmn" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ViewOrder.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Processes\foodorderprocess.bpmn">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

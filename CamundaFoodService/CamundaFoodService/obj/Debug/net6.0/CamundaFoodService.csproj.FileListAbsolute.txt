@@ -54,3 +54,4 @@ G:\Local disk\intelmsjun2022\CamundaFoodService\CamundaFoodService\obj\Debug\net
 G:\Local disk\intelmsjun2022\CamundaFoodService\CamundaFoodService\obj\Debug\net6.0\CamundaFoodService.pdb
 G:\Local disk\intelmsjun2022\CamundaFoodService\CamundaFoodService\obj\Debug\net6.0\CamundaFoodService.genruntimeconfig.cache
 G:\Local disk\intelmsjun2022\CamundaFoodService\CamundaFoodService\obj\Debug\net6.0\ref\CamundaFoodService.dll
+G:\Local disk\intelmsjun2022\CamundaFoodService\CamundaFoodService\bin\Debug\net6.0\Forms\ViewOrder.html

@@ -5,44 +5,67 @@
       <bpmn:outgoing>Flow_05ydn20</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:endEvent id="Event_0ejr04u">
-      <bpmn:incoming>Flow_1nh1qxe</bpmn:incoming>
+      <bpmn:incoming>Flow_1j6jomh</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_05ydn20" sourceRef="StartEvent_1" targetRef="Activity_Read" />
-    <bpmn:sequenceFlow id="Flow_1nh1qxe" sourceRef="Activity_Read" targetRef="Event_0ejr04u" />
+    <bpmn:sequenceFlow id="Flow_1nh1qxe" sourceRef="Activity_Read" targetRef="Activity_Approve" />
     <bpmn:serviceTask id="Activity_Read" name="Read Order" camunda:type="external" camunda:topic="readtask">
       <bpmn:incoming>Flow_05ydn20</bpmn:incoming>
       <bpmn:outgoing>Flow_1nh1qxe</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1j6jomh" sourceRef="Activity_Approve" targetRef="Event_0ejr04u" />
+    <bpmn:userTask id="Activity_Approve" name="Order Approval" camunda:formKey="embedded:deployment:Forms.ViewOrder.html" camunda:assignee="demo">
+      <bpmn:incoming>Flow_1nh1qxe</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j6jomh</bpmn:outgoing>
+    </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_0a0sflo">
       <bpmn:text>Read Food Order Details</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_0wmnen0" sourceRef="Activity_Read" targetRef="TextAnnotation_0a0sflo" />
+    <bpmn:textAnnotation id="TextAnnotation_1ielfwi">
+      <bpmn:text>Get Approval</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0mnpkj9" sourceRef="Activity_Approve" targetRef="TextAnnotation_1ielfwi" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_Food_Order">
-      <bpmndi:BPMNShape id="TextAnnotation_0a0sflo_di" bpmnElement="TextAnnotation_0a0sflo" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="330" y="80" width="100" height="41" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_05ydn20_di" bpmnElement="Flow_05ydn20">
-        <di:waypoint x="215" y="187" />
-        <di:waypoint x="280" y="187" />
+      <bpmndi:BPMNEdge id="Flow_1j6jomh_di" bpmnElement="Flow_1j6jomh">
+        <di:waypoint x="540" y="187" />
+        <di:waypoint x="612" y="187" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1nh1qxe_di" bpmnElement="Flow_1nh1qxe">
         <di:waypoint x="380" y="187" />
-        <di:waypoint x="442" y="187" />
+        <di:waypoint x="440" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_05ydn20_di" bpmnElement="Flow_05ydn20">
+        <di:waypoint x="215" y="187" />
+        <di:waypoint x="280" y="187" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
         <dc:Bounds x="179" y="169" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0ejr04u_di" bpmnElement="Event_0ejr04u" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
-        <dc:Bounds x="442" y="169" width="36" height="36" />
+        <dc:Bounds x="612" y="169" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1gzhjqe_di" bpmnElement="Activity_Read" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
         <dc:Bounds x="280" y="147" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kewoir_di" bpmnElement="Activity_Approve" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
+        <dc:Bounds x="440" y="147" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0a0sflo_di" bpmnElement="TextAnnotation_0a0sflo" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="330" y="80" width="100" height="41" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1ielfwi_di" bpmnElement="TextAnnotation_1ielfwi" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="490" y="70" width="100" height="30" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0wmnen0_di" bpmnElement="Association_0wmnen0">
         <di:waypoint x="352" y="147" />
         <di:waypoint x="366" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0mnpkj9_di" bpmnElement="Association_0mnpkj9">
+        <di:waypoint x="510" y="147" />
+        <di:waypoint x="533" y="100" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

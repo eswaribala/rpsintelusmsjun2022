@@ -14,7 +14,7 @@
       <bpmn:outgoing>Flow_1nh1qxe</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_1j6jomh" sourceRef="Activity_Approve" targetRef="Event_0ejr04u" />
-    <bpmn:userTask id="Activity_Approve" name="Order Approval" camunda:formKey="embedded:deployment:Forms.ViewOrder.html" camunda:assignee="demo">
+    <bpmn:userTask id="Activity_Approve" name="Order Approval" camunda:formKey="embedded:deployment:ViewOrder.html" camunda:assignee="demo">
       <bpmn:incoming>Flow_1nh1qxe</bpmn:incoming>
       <bpmn:outgoing>Flow_1j6jomh</bpmn:outgoing>
     </bpmn:userTask>

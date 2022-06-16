@@ -16,7 +16,9 @@ namespace CamundaFoodService.Bpmns
             var bpmnResourceStream = this.GetType()
                 .Assembly
                 .GetManifestResourceStream("CamundaFoodService.Processes.foodorderprocess.bpmn");
-
+            var bpmnResourceStreamHtml = this.GetType()
+                .Assembly
+                .GetManifestResourceStream("CamundaFoodService.Forms.ViewOrder.html");
             try
             {
                 await camunda.Deployments.Create(
@@ -25,7 +27,9 @@ namespace CamundaFoodService.Bpmns
                     true,
                     null,
                     null,
-                    new ResourceDataContent(bpmnResourceStream, "foodorderprocess.bpmn"));
+                    new ResourceDataContent(bpmnResourceStream, "foodorderprocess.bpmn"),
+                    new ResourceDataContent(bpmnResourceStreamHtml, "ViewOrder.html")
+                    );
             }
             catch (Exception e)
             {

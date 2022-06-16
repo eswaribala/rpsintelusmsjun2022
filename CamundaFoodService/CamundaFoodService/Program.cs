@@ -2,6 +2,7 @@ using Camunda.Worker;
 using Camunda.Worker.Client;
 using CamundaFoodService.Bpmns;
 using CamundaFoodService.Handlers;
+using Microsoft.Extensions.FileProviders;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,7 +33,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseFileServer(new FileServerOptions
+{
+    FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Forms")),
+    RequestPath = "/Forms",
+    EnableDefaultFiles = true
+});
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

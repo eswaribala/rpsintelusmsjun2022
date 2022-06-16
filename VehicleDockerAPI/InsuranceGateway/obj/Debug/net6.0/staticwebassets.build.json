@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gxREiqQtF3SuajbdILPlYszMlobk1dvczJ9Z96xaTYo=",
+  "Source": "InsuranceGateway",
+  "BasePath": "_content/InsuranceGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

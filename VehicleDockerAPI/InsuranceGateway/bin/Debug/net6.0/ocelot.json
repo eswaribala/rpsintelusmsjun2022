@@ -1,0 +1,39 @@
+﻿{
+    "Routes": [
+        {
+            "ServiceName": "CLAIMAPI",
+            "DownstreamPathTemplate": "/WeatherForecast",
+            "UpstreamPathTemplate": "/weather",
+            "UpstreamHttpMethod": [ "GET" ],
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
+            "ServiceName": "INTEL-COMMON",
+            "DownstreamPathTemplate": "/api/v2/Vehicle",
+            "UpstreamPathTemplate": "/vehicles",
+            "UpstreamHttpMethod": [ "GET" ],
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        }
+    ],
+    "GlobalConfiguration": {
+        "RequestIdKey": "OcRequestId",
+        "DownstreamScheme": "http",
+        "ReRoutesCaseSensitive": false,
+        "UseServiceDiscovery": true,
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 8761,
+            "Type": "Eureka"
+        }
+    }
+}

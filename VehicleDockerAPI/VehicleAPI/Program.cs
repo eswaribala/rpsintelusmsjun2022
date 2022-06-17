@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-
+using Prometheus;
 using System.Text;
 using VehicleAPI.Contexts;
 using VehicleAPI.Models;
@@ -76,7 +76,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMetricServer();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

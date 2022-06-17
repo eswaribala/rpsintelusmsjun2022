@@ -32,3 +32,5 @@ G:\Local disk\intelmsjun2022\VehicleDockerAPI\bin\Debug\VehicleAPI.pdb
 G:\Local disk\intelmsjun2022\VehicleDockerAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 G:\Local disk\intelmsjun2022\VehicleDockerAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 G:\Local disk\intelmsjun2022\VehicleDockerAPI\obj\Debug\docker-compose.dcproj.CopyComplete
+G:\Local disk\intelmsjun2022\VehicleDockerAPI\bin\Debug\Prometheus.AspNetCore.dll
+G:\Local disk\intelmsjun2022\VehicleDockerAPI\bin\Debug\Prometheus.NetStandard.dll

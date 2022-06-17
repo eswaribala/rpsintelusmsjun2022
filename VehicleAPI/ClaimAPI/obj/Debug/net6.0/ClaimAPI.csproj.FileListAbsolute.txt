@@ -55,3 +55,12 @@ G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Serilog.Sinks.
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Serilog.Sinks.Elasticsearch.dll
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
 G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Thrift.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Jaeger.Communication.Thrift.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Jaeger.Core.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Jaeger.Senders.Thrift.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\OpenTracing.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\OpenTracing.Contrib.NetCore.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\System.Net.Http.WinHttpHandler.dll
+G:\Local disk\intelmsjun2022\VehicleAPI\ClaimAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll

@@ -1,5 +1,6 @@
 using ClaimAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using OpenTracing;
 
 namespace ClaimAPI.Controllers
 {
@@ -9,9 +10,11 @@ namespace ClaimAPI.Controllers
     {
         //private readonly IInvokeService _invokeService;
         private readonly ILogger<WeatherForecastController> _logger;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        private ITracer _tracer;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ITracer tracer)
         {
             this._logger = logger;
+            this._tracer = tracer;
         }
 
         private static readonly string[] Summaries = new[]
@@ -28,6 +31,9 @@ namespace ClaimAPI.Controllers
             Random random = new Random();
             var randomValue = random.Next(0, Summaries.Length);
             _logger.LogInformation($"Random Value is {randomValue}");
+            var actionName = ControllerContext.ActionDescriptor.DisplayName;
+            using var scope = _tracer.BuildSpan(actionName).StartActive(true);
+            scope.Span.Log("Request added to Tracer....");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

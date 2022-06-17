@@ -1,7 +1,13 @@
 using ClaimAPI.Services;
+using Jaeger;
+using Jaeger.Samplers;
+using OpenTracing;
+using OpenTracing.Util;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
 using Steeltoe.Discovery.Client;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 var configuration = new ConfigurationBuilder()
@@ -39,7 +45,25 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
+builder.Services.AddSingleton<ITracer>(serviceProvider =>
+{
+    string serviceName = Assembly.GetEntryAssembly().GetName().Name;
 
+    ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+
+    ISampler sampler = new ConstSampler(sample: true);
+
+    ITracer tracer = new Tracer.Builder(serviceName)
+        .WithLoggerFactory(loggerFactory)
+        .WithSampler(sampler)
+        .Build();
+
+    GlobalTracer.Register(tracer);
+
+    return tracer;
+});
+
+builder.Services.AddOpenTracing();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
